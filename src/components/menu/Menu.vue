@@ -18,15 +18,13 @@
       <template #title>
         <span><Component :is="item.icon"/><span>{{ item.title }}</span></span>
       </template>
-      <template v-for="subItem in item.children" :key="subItem.key">
-        <a-menu-item :key="subItem.key">{{ subItem.title }}</a-menu-item>
-      </template>
+      <a-menu-item v-for="subItem in item.children" :key="subItem.key">{{ subItem.title }}</a-menu-item>
     </a-sub-menu>
   </a-menu>
 </template>
 
 <script lang="ts">
-import {defineComponent, inject, reactive, toRefs, watchEffect, UnwrapRef} from 'vue'
+import {defineComponent, inject, reactive, toRefs, UnwrapRef, watchEffect} from 'vue'
 import {useRoute, useRouter} from 'vue-router'
 import {HomeOutlined, SettingOutlined} from '@ant-design/icons-vue'
 import {Menu} from "@/interface/user";

@@ -13,7 +13,6 @@
     "core-js": "^3.12.0",
     "dayjs": "^1.10.4",
     "lodash": "^4.17.21",
-    "node-rsa": "^1.1.1",
     "nprogress": "^0.2.0",
     "query-string": "^7.0.0",
     "store": "^2.0.12",
@@ -23,7 +22,6 @@
     "vuex": "^4.0.0"
   },
   "devDependencies": {
-    "@types/node-rsa": "^1.1.0",
     "@types/nprogress": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^4.22.1",
     "@typescript-eslint/parser": "^4.22.1",
@@ -35,16 +33,14 @@
     "@vue/cli-service": "^4.5.12",
     "@vue/compiler-sfc": "^3.0.11",
     "@vue/eslint-config-typescript": "^7.0.0",
-    "autoprefixer": "^10.2.5",
     "compression-webpack-plugin": "^6.1.1",
     "eslint": "^7.25.0",
     "eslint-plugin-vue": "^7.9.0",
-    "postcss": "^8.2.14",
+    "jsencrypt": "^3.2.0",
     "stats-webpack-plugin": "^0.7.0",
     "style-resources-loader": "^1.4.1",
     "stylus": "^0.54.8",
     "stylus-loader": "^3.0.2",
-    "tailwindcss": "^2.1.2",
     "typescript": "^4.2.4",
     "webpack-bundle-analyzer": "^4.4.1"
   }

@@ -14,7 +14,7 @@ const checkToken = async (): Promise<void> => {
     const refresh_token: string = storage.get('refresh_token')
     const access_token_expire: number = storage.getExpiration('access_token') || -1
     const refresh_token_expire: number = storage.getExpiration('refresh_token') || -1
-    console.log("test....", access_token_expire - new Date().getTime(), access_token_expire)
+    console.log("system....", access_token_expire - new Date().getTime(), access_token_expire)
     if (!user || !refresh_token || (refresh_token_expire - new Date().getTime()) / 1000 <= 320) { // refresh_token有效时间不足一次检查周期5分钟
         clearTimeout(timer)
         await store.dispatch(LOGOUT).then()

@@ -32,7 +32,7 @@ const assetsCDN = {
         }
     },
     css: [
-        '//cdn.jsdelivr.net/npm/ant-design-vue@2.1.2/dist/antd.min.css'
+        '//cdn.jsdelivr.net/npm/ant-design-vue@2.1.3/dist/antd.min.css'
     ],
     js: [
         '//cdn.jsdelivr.net/npm/vue@3.0.11/dist/vue.global.min.js',
@@ -40,7 +40,7 @@ const assetsCDN = {
         '//cdn.jsdelivr.net/npm/vuex@4.0.0/dist/vuex.global.min.js',
         '//cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js',
         '//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js',
-        '//cdn.jsdelivr.net/npm/ant-design-vue@2.1.2/dist/antd-with-locales.min.js',
+        '//cdn.jsdelivr.net/npm/ant-design-vue@2.1.3/dist/antd-with-locales.min.js',
         '//cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js',
         '//cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js'
     ]
@@ -48,7 +48,7 @@ const assetsCDN = {
 
 const assetsDevCDN = {
     css: [
-        '//cdn.jsdelivr.net/npm/ant-design-vue@2.1.2/dist/antd.min.css'
+        '//cdn.jsdelivr.net/npm/ant-design-vue@2.1.3/dist/antd.min.css'
     ]
 }
 

@@ -15,7 +15,7 @@ import Layout from '../layouts/BasicLayout.vue'
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/login',
-        name: 'Login',
+        name: 'login',
         component: Login
     },
     {
@@ -30,9 +30,14 @@ const routes: Array<RouteRecordRaw> = [
                 component: () => import('../views/index/Index.vue')
             },
             {
-                path: '/test',
-                name: 'test',
-                component: () => import('../views/test/Test.vue')
+                path: '/user',
+                name: 'user',
+                component: () => import('../views/system/User.vue')
+            },
+            {
+                path: '/role',
+                name: 'role',
+                component: () => import('../views/system/Role.vue')
             }
         ]
     },
