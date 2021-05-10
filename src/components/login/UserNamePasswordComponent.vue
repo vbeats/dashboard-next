@@ -1,13 +1,13 @@
 <template>
   <a-form
       ref="formRef"
-      :model="form"
+      :model="formState"
       :rules="rules"
       :wrapperCol="wrapperCol"
   >
 
     <a-form-item name="tenant" :v-show="showTenant">
-      <a-input v-model:value="form.tenant" size="large" placeholder="租户编号">
+      <a-input v-model:value="formState.tenant" size="large" placeholder="租户编号">
         <template #prefix>
           <ShopOutlined style="color:rgba(0,0,0,.25)"/>
         </template>
@@ -15,7 +15,7 @@
     </a-form-item>
 
     <a-form-item name="username">
-      <a-input v-model:value="form.username" size="large" placeholder="账号">
+      <a-input v-model:value="formState.username" size="large" placeholder="账号">
         <template #prefix>
           <UserOutlined style="color:rgba(0,0,0,.25)"/>
         </template>
@@ -23,7 +23,7 @@
     </a-form-item>
 
     <a-form-item name="password">
-      <a-input-password v-model:value="form.password" size="large" placeholder="密码">
+      <a-input-password v-model:value="formState.password" size="large" placeholder="密码">
         <template #prefix>
           <LockOutlined style="color:rgba(0,0,0,.25)"/>
         </template>
@@ -33,10 +33,10 @@
     <a-form-item name="captcha">
       <a-row>
         <a-col :span="14">
-          <a-input v-model:value="form.captcha" size="large" placeholder="验证码" @blur="checkCaptcha"/>
+          <a-input v-model:value="formState.captcha" size="large" placeholder="验证码" @blur="checkCaptcha"/>
         </a-col>
         <a-col :span="8" :offset="2">
-          <img :src="form.img" alt="" style="width: 100%;height: 60px;cursor: pointer" @click="refreshCaptcha"/>
+          <img :src="formState.img" alt="" style="width: 100%;height: 60px;cursor: pointer" @click="refreshCaptcha"/>
         </a-col>
       </a-row>
     </a-form-item>
@@ -48,25 +48,35 @@
 </template>
 
 <script lang="ts">
-import {DefineComponent, defineComponent, onMounted, reactive, ref} from 'vue'
+import {DefineComponent, defineComponent, onMounted, reactive, ref, UnwrapRef} from 'vue'
 import {LockOutlined, ShopOutlined, UserOutlined} from '@ant-design/icons-vue'
 import {getCaptcha} from '@/api/user'
+
+interface FormState {
+  tenant: string,
+  username: string,
+  password: string,
+  captcha: string,
+  key: string,
+  img: string
+}
 
 export default defineComponent({
   name: "UserNamePasswordComponent",
   components: {UserOutlined, LockOutlined, ShopOutlined},
   setup(props, {emit}) {
     const data: any = reactive({
-      form: {
-        tenant: '',
-        username: '',
-        password: '',
-        captcha: '',
-        key: '',
-        img: ''
-      },
       showTenant: process.env.VUE_APP_TENANT === 'show',
       disabled: false
+    })
+
+    const formState: UnwrapRef<FormState> = reactive({
+      tenant: '',
+      username: '',
+      password: '',
+      captcha: '',
+      key: '',
+      img: ''
     })
 
     const rules = {
@@ -121,6 +131,7 @@ export default defineComponent({
 
     return {
       ...data,
+      formState,
       rules,
       submit,
       formRef,
